@@ -1,0 +1,30 @@
+@import '../variables.scss';
+
+.status{
+    background-color: $airBean_orange;
+    flex-direction: column;
+    padding: 0 3rem;
+    p{
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-family: 'Work Sans';
+        margin-bottom: 5rem;
+        font-weight: 300;
+        .orderID{
+            font-weight: 600;
+        }
+    }
+    .status-box{
+        h2{
+            font-size: 2.25rem;
+            color: white;
+            text-align: center;
+            font-weight: 600;
+            
+            margin: 4rem auto;
+        }
+    }
+    .btn{
+        @include btn(white, $airBean_brown);
+    }
+}

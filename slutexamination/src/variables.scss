@@ -1,0 +1,17 @@
+$airBean_green: rgba(56, 132, 109, 1);
+$airBean_orange: rgba(229, 103, 78, 1);
+$airBean_pink: rgba(243, 228, 225, 1);
+$airBean_brown: rgba(47, 41, 38, 1);
+
+@mixin btn($colorBG, $colorFont) {
+    background-color: $colorBG;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    display: block;
+    color: $colorFont;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'PT serif';
+}
