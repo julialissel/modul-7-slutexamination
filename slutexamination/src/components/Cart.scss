@@ -42,10 +42,28 @@
                 flex-wrap: wrap;
                 margin-bottom: 1rem;
                 align-items: baseline;
+               
                 &:last-child{
                     margin-bottom: 1rem;
                 }
-                
+                .quantity{
+                    position: relative;
+                    .arrow{
+                        display: flex;
+                        position: absolute;
+                        border: none;
+                        background: none;
+                        &.upp{
+                            top: -.5rem;
+                        }
+                        &.down{
+                            bottom: -.5rem;
+                        }
+                    }
+                    
+                    
+                    
+                }
                 .cart-item-price{
                     flex: 0 0 100%;
                     font-family: 'Work sans';
