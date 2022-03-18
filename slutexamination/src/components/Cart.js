@@ -15,16 +15,20 @@ function Cart(){
   
     const dispatch = useDispatch();
     console.log(choies);
-    const totalPrice = choies.reduce((totalSum, product)=>{
-        console.log(product.quantity);
-        let price =product.item.price
-        if(product.quantity > 1){
-            totalSum = price *  product.quantity
-        }
-        return totalSum += price
-        },0)
+    // const totalPrice = choies.reduce((totalSum, product)=>{
+    //     console.log(product.quantity);
+    //     let price =product.item.price
+    //     if(product.quantity > 1){
+    //         totalSum = price *  product.quantity
+    //     }
+    //     return totalSum += price
+    //     },0)
    
-    
+        const totalPrice = choies.reduce((totalSum, product) => {
+            let price = product.item.price;
+            return (totalSum += price * (product?.quantity || 1));
+          }, 0);
+          console.log(totalPrice);
     async function sendData(){
         dispatch(checkFetching(true))
         const respons = await fetch('http://localhost:5001/api/beans/', {

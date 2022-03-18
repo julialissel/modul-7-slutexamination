@@ -17,6 +17,7 @@ function MenuItem({data}){
             </a>
             <div className="menu-box">
                 <h3>{data.title}</h3>
+                <span className="dot"></span>
                 <span className='price'>{data.price} kr</span>
                 <div className='menu-info'>
                     <p>{data.desc}</p>
