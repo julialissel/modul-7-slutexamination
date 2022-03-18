@@ -4,6 +4,9 @@
     background-color: $airBean_orange;
     flex-direction: column;
     padding: 0 3rem;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
     p{
         font-size: 1rem;
         color: rgba(255, 255, 255, 0.7);
@@ -21,7 +24,18 @@
             text-align: center;
             font-weight: 600;
             
-            margin: 4rem auto;
+            margin: 3rem auto;
+        }
+        h4{
+            text-align: center;
+            font-family: 'Work sans';
+            font-weight: 400;
+            color: white;
+            margin-bottom: 2rem;
+            font-size: 1.33rem;
+            span{
+                font-weight: 700;
+            }
         }
     }
     .btn{

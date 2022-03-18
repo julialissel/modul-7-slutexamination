@@ -12,6 +12,34 @@
             bottom: 0;
         }
     }
+    .cart{
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        padding: 1rem;
+        background-color: $airBean_brown;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        .nrItem{
+            background-color: $airBean_orange;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        
+    }
     .menu-container{
         padding-top: 35%;
         h1{
@@ -40,6 +68,9 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    &:hover{
+                        background-color: brown;
+                    }
                 }
                 .menu-box{
                     display: flex;

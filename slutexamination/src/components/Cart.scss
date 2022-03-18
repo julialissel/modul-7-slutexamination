@@ -1,21 +1,7 @@
 @import '../variables.scss';
 .cart-container{
 
-    .cart{
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
-        padding: 1rem;
-        background-color: $airBean_brown;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 10;
-        
-    }
+    
     .shoppingBag{
         top: 12%;
         right: 0;

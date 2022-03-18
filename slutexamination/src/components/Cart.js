@@ -1,19 +1,48 @@
-import cartIcon from '../assets/graphics/bag.svg';
+
 import './Cart.scss';
 import { Link} from "react-router-dom";
 import {useSelector} from 'react-redux';
 
 import CartList from './CartList';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { orderStatus } from '../actions/menuActions';
+import { checkFetching } from '../actions/menuActions';
 
 function Cart(){
     const choies = useSelector((state) => {return state.order});
-    console.log('cart', choies);
+  
+    const dispatch = useDispatch();
+    console.log(choies);
+    const totalPrice = choies.reduce((totalSum, product)=>{
+        console.log(product.quantity);
+        let price =product.item.price
+        if(product.quantity > 1){
+            totalSum = price *  product.quantity
+        }
+        return totalSum += price
+        },0)
+   
+    
+    async function sendData(){
+        dispatch(checkFetching(true))
+        const respons = await fetch('http://localhost:5001/api/beans/', {
+            method: 'POST',
+            body: JSON.stringify(choies)
+          });
+          const content = await respons.json();
+
+          
+          dispatch(orderStatus(content))
+         
+          
+    
+    }
     
     return(
         <div className='cart-container'>
-            <div className="cart">
-                <img src={ cartIcon } />
-            </div>
+            
             <article className='shoppingBag'>
                 <h2>Din beställning</h2>
                 <ul>
@@ -25,17 +54,12 @@ function Cart(){
                 </ul>
                 <div className='total-box'>
                     <h3>Totalt</h3>
-                    <span className='total-price'>399 kr</span>
+                    
+                    <span className='total-price'>{ totalPrice } kr</span>
                     <span className='ink'>inkl moms + drönarleverans</span>
                 </div>
-                <Link
-                    to={{
-                        pathname: `/status/`
-                    }}
-                    className="btn"
-                >
-                    Take my money!
-                </Link>
+                <a className='btn' onClick={sendData}>Take my money!</a>
+                
             </article>
             
         </div>

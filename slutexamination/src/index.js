@@ -32,7 +32,7 @@ ReactDOM.render(
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/menu" element={<Menu />} />
-            <Route path="/status" element={<Status />} />
+            {/* <Route path="/status" element={<Status />} /> */}
             
             <Route
               path="*"

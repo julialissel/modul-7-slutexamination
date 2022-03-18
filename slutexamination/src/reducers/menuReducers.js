@@ -1,5 +1,7 @@
 const initialState = {
-    order: []
+    order: [],
+    orderStatus: null,
+    fetching: false
 }
 const updateCart = (state, action) => {
     const updatedOrder = [...state.order];
@@ -15,8 +17,7 @@ const updateCart = (state, action) => {
     })
     
     if(updatedItem){
-        // console.log(updatedOrder)
-        // console.log(updatedItemIndex)
+       
         updatedOrder[updatedItemIndex].quantity = updatedOrder[updatedItemIndex].quantity + 1 
        
     }else{
@@ -36,6 +37,22 @@ const menuReducers = (state = initialState, action) => {
                 ...state,
                 order: updateCart(state,action)
             }
+        case 'ORDER_STATUS':
+                return {
+                    ...state,
+                    orderStatus: action.payload
+                }
+        case 'REMOVE_CHOICES':
+                return {
+                    ...state,
+                    orderStatus: null,
+                    order: []
+                }
+        case 'CHECK_FETCHING':
+                    return {
+                        ...state,
+                        fetching:  action.payload
+                    }
         default:
             return state;
     }

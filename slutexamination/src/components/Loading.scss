@@ -1,0 +1,14 @@
+@import '../variables.scss';
+
+.loading{
+    background-color: $airBean_green;
+    flex-direction: column;
+    padding: 0 3rem;
+    position: fixed;
+    z-index: 50;
+    width: 100%;
+    h2{
+        color: white;
+        margin: 2rem 0;
+    }
+}

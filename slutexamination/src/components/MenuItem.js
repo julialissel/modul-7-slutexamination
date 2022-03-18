@@ -7,7 +7,7 @@ function MenuItem({data}){
     function saveChoies(){
         
         dispatchD(menuChoise(data));
-        console.log('item', data);
+        
         
     }
     return(

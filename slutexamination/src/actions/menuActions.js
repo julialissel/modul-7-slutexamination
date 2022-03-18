@@ -5,3 +5,21 @@ export const menuChoise = (menu) =>{
         payload: menu
     }
 }
+export const orderStatus = (orderStatus) =>{
+    return{
+        type: 'ORDER_STATUS',
+        payload: orderStatus
+    }
+}
+export const removeOrder = (orderStatus) =>{
+    return{
+        type: 'REMOVE_CHOICES',
+        payload: orderStatus
+    }
+}
+export const checkFetching = (fetching) =>{
+    return{
+        type: 'CHECK_FETCHING',
+        payload: fetching
+    }
+}
