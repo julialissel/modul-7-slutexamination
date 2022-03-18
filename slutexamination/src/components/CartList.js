@@ -6,7 +6,7 @@ import { useDispatch} from 'react-redux';
 function CartList({data}){
     const dispatchD = useDispatch();
     function increase(){
-        console.log('test')
+        
         dispatchD(increaseQuant(data))
         
         

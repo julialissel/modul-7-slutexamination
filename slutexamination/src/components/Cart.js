@@ -14,7 +14,7 @@ function Cart(){
     const choies = useSelector((state) => {return state.order});
   
     const dispatch = useDispatch();
-    console.log(choies);
+    // console.log(choies);
     // const totalPrice = choies.reduce((totalSum, product)=>{
     //     console.log(product.quantity);
     //     let price =product.item.price
@@ -28,7 +28,14 @@ function Cart(){
             let price = product.item.price;
             return (totalSum += price * (product?.quantity || 1));
           }, 0);
-          console.log(totalPrice);
+        const kampanj = choies.find((item,index) => {
+            console.log(item.item.id)
+            if(item.item.id === 1 && item.item.id === 7){
+                console.log('WINNWE');
+            } 
+        })
+        
+        console.log(choies);
     async function sendData(){
         dispatch(checkFetching(true))
         const respons = await fetch('http://localhost:5001/api/beans/', {

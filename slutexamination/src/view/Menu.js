@@ -43,7 +43,7 @@ function Events(){
         return totalSum += total
         
         },0)
-    console.log(fetching.fetching);
+    // console.log(fetching.fetching);
    function resetAll(){
        setVisible(false)
        dispatch(checkFetching(false))

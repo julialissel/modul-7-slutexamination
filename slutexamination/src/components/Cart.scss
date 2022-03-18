@@ -5,17 +5,25 @@
     margin: 0 .3rem;
 }
 .cart-container{
-
-    
-    .shoppingBag{
-        top: 12%;
-        right: 0;
-        position: absolute;
+    top: 12%;
+        right: 1rem;
+        left: 1rem;
+        bottom: 1rem;
+        position: fixed;
         background-color: white;
         z-index: 11;
         padding: 1rem;
         border-radius: 5px;
         color: $airBean_brown;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    
+    .shoppingBag{
+        flex: 0 0 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
         &:before{
             content: '';
             position: absolute;
@@ -36,6 +44,7 @@
         }
         ul{
             margin-bottom: 4rem;
+            flex: 1;
             .cart-item{
                 display: flex;
                 justify-content: space-between;

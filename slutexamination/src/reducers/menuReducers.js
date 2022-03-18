@@ -32,16 +32,35 @@ const updateCart = (state, action) => {
 }
 const increaseQuant = (state, action) => {
     const updatedOrder = [...state.order];
-    let indexID = state.order.findIndex(item => {
-        return item.item.id = action.payload.item.id
-    })
-    console.log(indexID, 'rr');
-    console.log('pay',action.payload.item.id)
-    let number = action.payload.item.id -1;
-    console.log(updatedOrder[number])
-    updatedOrder[number*1].quantity = updatedOrder[number*1].quantity +1 
+    let getQuantity;
+    let updatedItemIndex;
+    // let indexID = state.order.findIndex(item => {
+    //     return item.item.id = action.payload.item.id
+    // })
+    // console.log(indexID, 'rr');
+    // console.log('pay',action.payload.item.id)
+    // let number = action.payload.item.id -1;
+    // console.log(updatedOrder[number])
+    // updatedOrder[number*1].quantity = updatedOrder[number*1].quantity +1 
     // updatedOrder[updatedItemIndex].quantity = updatedOrder[updatedItemIndex].quantity + 1 
-    console.log('in',updatedOrder)
+    // console.log('in',updatedOrder)
+    // updatedOrder.map((item)=>{
+    //     // console.log('ITEM', item.quantity)
+    //     getQuantity = item.quantity
+    //     let test = updatedOrder[getQuantity*1].quantity 
+    //     test = updatedOrder[getQuantity*1].quantity +1 
+    //     return test 
+    // })
+    const inQuant = updatedOrder.reduce((totalSum, item,index) => {
+        let total =item.quantity
+        console.log('QUANT',index)
+        let newPrice = totalSum = total +1
+        total = total + 1
+        return total
+       
+      }, 0);
+      console.log('ITEM',inQuant)
+    
     return updatedOrder
 }
 const menuReducers = (state = initialState, action) => {
