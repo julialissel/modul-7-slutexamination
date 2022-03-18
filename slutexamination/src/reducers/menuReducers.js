@@ -30,6 +30,20 @@ const updateCart = (state, action) => {
     }
     return updatedOrder
 }
+const increaseQuant = (state, action) => {
+    const updatedOrder = [...state.order];
+    let indexID = state.order.findIndex(item => {
+        return item.item.id = action.payload.item.id
+    })
+    console.log(indexID, 'rr');
+    console.log('pay',action.payload.item.id)
+    let number = action.payload.item.id -1;
+    console.log(updatedOrder[number])
+    updatedOrder[number*1].quantity = updatedOrder[number*1].quantity +1 
+    // updatedOrder[updatedItemIndex].quantity = updatedOrder[updatedItemIndex].quantity + 1 
+    console.log('in',updatedOrder)
+    return updatedOrder
+}
 const menuReducers = (state = initialState, action) => {
     switch(action.type){
         case 'SAVE_CHOICES':
@@ -37,6 +51,11 @@ const menuReducers = (state = initialState, action) => {
                 ...state,
                 order: updateCart(state,action)
             }
+        case 'INCREACE_QUANT':
+                return {
+                    ...state,
+                    order: increaseQuant(state,action)
+                }
         case 'ORDER_STATUS':
                 return {
                     ...state,

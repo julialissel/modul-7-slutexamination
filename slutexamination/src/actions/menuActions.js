@@ -23,3 +23,9 @@ export const checkFetching = (fetching) =>{
         payload: fetching
     }
 }
+export const increaseQuant = (quant) =>{
+    return{
+        type: 'INCREACE_QUANT',
+        payload: quant
+    }
+}
